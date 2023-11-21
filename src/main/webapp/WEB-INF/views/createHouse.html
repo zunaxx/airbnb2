@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New House</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<form th:method="POST" th:action="@{saveHouse}" th:object="${newHouse}">
+    <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+        <input th:field ="*{description}" type="text" class="form-control" id="description" >
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">address</label>
+        <input th:field ="*{address}" type="text" class="form-control" id="address" >
+    </div>
+    <div class="mb-3">
+        <input th:field="*{country}" type="text" class="form-label" id="country">
+        <label  class="form-label" for="country">country</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{price}" type="text" class="form-control" id="price">
+        <label class="form-label" for="price">Price</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{room}" type="text" class="form-label" id="room">
+        <label  class="form-label" for="room">room</label>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input th:field="*{image}" type="text" class="form-control" id="image">
+    </div>
+    <div class="mb-3">
+        <label for="agency" class="form-label">Agency</label>
+        <select th:field="*{agency}" class="form-control" id="agency">
+            <option th:each="agency : ${agencies}" th:value="${agency.getId()}" th:text="${agency.getName()}">Agency Name</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

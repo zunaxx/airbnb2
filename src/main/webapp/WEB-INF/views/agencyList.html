@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency List</title>
+</head>
+<body>
+
+<h1>Agency List</h1>
+
+<div class="card-container">
+    <div class="card" style="width: 18rem;" th:each="agency:${agencies}">
+        <img th:src="${agency.getImage()}" class="card-img-top" alt="..." style="height: 200px; width: 100%;">
+        <div class="card-body">
+            <h5 th:text="${agency.getName()}" class="card-title">Card title</h5>
+            <p th:text="${agency.getCountry()}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

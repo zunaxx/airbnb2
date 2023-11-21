@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<form th:method="PUT" th:action="@{/houses/{id}(id=${newHouse.getId()})}" th:object="${newHouse}">
+    <div class="mb-3">
+        <label for="address" class="form-label">address</label>
+        <input th:field ="*{address}" type="text" class="form-control" id="address" >
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+        <input th:field="*{description}" type="text" class="form-control" id="description">
+    </div>
+    <div class="mb-3">
+        <input th:field="*{image}" type="text" class="form-label" id="image">
+        <label  class="form-label" for="image">image</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{country}" type="text" class="form-label" id="country">
+        <label  class="form-label" for="country">email</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{price}" type="number" class="form-label" id="price">
+        <label  class="form-label" for="price">price</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{room}" type="number" class="form-label" id="room">
+        <label  class="form-label" for="room">room</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</body>
+</html>

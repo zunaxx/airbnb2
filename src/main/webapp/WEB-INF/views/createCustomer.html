@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<form th:method="POST" th:action="@{saveCustomer}" th:object="${newCustomer}">
+    <div class="mb-3">
+        <label for="name" class="form-label">Customer name</label>
+        <input th:field ="*{name}" type="text" class="form-control" id="name" >
+    </div>
+    <div class="mb-3">
+        <label for="surName" class="form-label">Customer surname</label>
+        <input th:field ="*{surName}" type="text" class="form-control" id="surName" >
+    </div>
+    <div class="mb-3">
+        <input th:field="*{email}" type="text" class="form-label" id="email">
+        <label  class="form-label" for="email">email</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{phoneNumber}" type="text" class="form-control" id="phoneNumber" pattern="^\+996\d{9}$" required>
+        <label class="form-label" for="phoneNumber">PhoneNumber (should start with +996)</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{gender}" type="text" class="form-label" id="gender">
+        <label  class="form-label" for="gender">gender</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{dateOfBirth}" type="date" class="form-label" id="dateOfBirth" name="dateOfBirth" placeholder="yyyy-MM-dd" required min="2005-01-01">
+        <label class="form-label" for="dateOfBirth">dateOfBirth (should be 18 or older)</label>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input th:field="*{image}" type="text" class="form-control" id="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<form th:method="PUT" th:action="@{/customers/{id}(id=${newCustomer.getId()})}" th:object="${newCustomer}">
+    <div class="mb-3">
+        <label for="name" class="form-label">Customer name</label>
+        <input th:field ="*{name}" type="text" class="form-control" id="name" >
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input th:field="*{image}" type="text" class="form-control" id="image">
+    </div>
+    <div class="mb-3">
+        <input th:field="*{phoneNumber}" type="text" class="form-label" id="phoneNumber">
+        <label  class="form-label" for="phoneNumber">PhoneNumber</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{email}" type="text" class="form-label" id="email">
+        <label  class="form-label" for="email">email</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</body>
+</html>

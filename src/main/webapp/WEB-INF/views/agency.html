@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agencies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" style="width: 18rem;">
+            <img th:src="${newAgency.getImage()}" class="card-img-top" alt="..." style="height: 200px; width: 100%;">
+            <div class="card-body">
+                <h5 th:text="${newAgency.getName()}" class="card-title">Card title</h5>
+                <p th:text="${newAgency.getCountry}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <a th:href="@{/agencies/{id}/update(id=${newAgency.getId()})}" class="btn btn-success">Update</a>
+
+                <form th:method="DELETE" th:action="@{/agencies/{id}/delete(id=${newAgency.getId()})}">
+                    <input type="submit" th:value="Delete" class="btn btn-danger">
+                </form>
+            </div>
+        </div>
+    </div>
+    <button type="submit"><a href="/agencies/assign" class="btn btn-success">Assign</a></button>
+    <button type="submit"><a href="/agencies" class="btn btn-success">Back to main page</a></button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

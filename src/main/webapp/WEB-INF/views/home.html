@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head>
+    <title>House Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-image: url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg');
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .hero button {
+            background-color: #ff5a5f;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .featured-properties {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">My Airbnb</div>
+        <ul>
+            <li><a href=" ">Home</a></li>
+            <li><a href="agencies">Agencies</a></li>
+            <li><a href="agencies/assign">Host a Property</a></li>
+            <li><a href="#">Sign In</a></li>
+        </ul>
+    </nav>
+
+
+</header>
+
+<section class="hero">
+    <h1>Find Your Perfect Stay</h1>
+    <p>Book unique homes and experiences all over the world.</p>
+    <button>Explore Now</button>
+</section>
+
+<footer>
+    <p>&copy; 2023 My Airbnb. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px; /* Добавляем отступы к содержимому формы */
+        }
+
+        .form-label {
+            display: block; /* Устанавливаем блочный тип для элементов label */
+            margin-bottom: 5px; /* Отступ снизу для элементов label */
+        }
+
+        .form-control {
+            width: 100%; /* Занимаем 100% ширины родительского контейнера */
+        }
+
+        .btn-primary {
+            transition: background-color 0.3s ease; /* Анимация при наведении на кнопку */
+        }
+
+        .btn-primary:hover {
+            background-color: #007bff; /* Цвет при наведении */
+        }
+
+    </style>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{save}" th:object="${newAgency}">
+    <div class="mb-3">
+        <label for="name" class="form-label">Agency name</label>
+        <input th:field ="*{name}" type="text" class="form-control" id="name" >
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input th:field="*{image}" type="text" class="form-control" id="image">
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input th:field="*{country}" type="text" class="form-control" id="country">
+    </div>
+    <div class="mb-3">
+        <input th:field="*{phoneNumber}" type="text" class="form-label" id="phoneNumber">
+        <label  class="form-label" for="phoneNumber">PhoneNumber</label>
+    </div>
+    <div class="mb-3">
+        <input th:field="*{email}" type="text" class="form-label" id="email">
+        <label  class="form-label" for="email">email</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

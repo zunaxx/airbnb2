@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Client to Agency</title>
+</head>
+<body>
+
+<h1>Assign Client to Agency</h1>
+
+<form action="agencies/assign" method="POST">
+    <label for="customerId">Select Client:</label>
+    <select id="customerId" name="customerId">
+        <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.name}"></option>
+    </select>
+
+    <label for="agencyId">Select Agency:</label>
+    <select id="agencyId" name="agencyId">
+        <option th:each="agency : ${agencies}" th:value="${agency.id}" th:text="${agency.name}"></option>
+    </select>
+
+    <button type="submit">Assign</button>
+</form>
+
+</body>
+</html>
